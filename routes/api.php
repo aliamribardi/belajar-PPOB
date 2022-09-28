@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PulsaController;
+use App\Http\Controllers\API\PulsaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('/', [PulsaController::class, 'show']);
+Route::get('/', [PulsaController::class, 'index']);
+Route::get('/show/{pulsa}', [PulsaController::class, 'show']);
