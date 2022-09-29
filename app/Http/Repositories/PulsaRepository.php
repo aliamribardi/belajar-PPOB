@@ -34,20 +34,17 @@ class PulsaRepository extends BaseRepository
         // $j = [];
         // $p = '';
         // $j = collect($b->message);
-        $p = collect($b->message)->where('provider', $pulsa)->where('provider_sub', 'REGULER')->all();
+        $p = collect($b->message)->where('provider', $pulsa)->where('provider_sub', 'REGULER');
 
-        $pkt = telkomsel($p);
+        
 
-
-        $arrHelp = array(
-            'TELKOMSEL' => 'S',
-            'AXIS' => 'AX',
-            'TRI' => 'T',
-            'XL' => 'X',
-            'SMARTFREN' => 'SM',
-        );
-
-        dd($arrHelp[$pulsa]);
+        $op = ($p->first())->operator_sub;
+        
+        // foreach($p as $i) {
+        //     $op = $i->operator_sub;
+        // }
+        $pkt = telkomsel($p->all(), $op);
+            // dd($op);
 
         // dd($pkt);
     

@@ -4,7 +4,7 @@ use App\Models\Pulsa;
 
 if(! function_exists('telkomsel'))
 {
-    function telkomsel($paket)
+    function telkomsel($paket, $op)
     {
         // $pulsa = [
         //     (object) ['pulsa' => '5.000'],
@@ -12,18 +12,21 @@ if(! function_exists('telkomsel'))
         //     (object) ['pulsa' => '15.000'],
         //     (object) ['pulsa' => '20.000'],
         // ]; 
+        
+        $c = strlen($op);
+        // dd($c);
 
         $db = Pulsa::all();
 
         foreach($paket as $p) {
-            if($p->operator_sub == 'S') {
+            if($p->operator_sub == $op) {
                 $code[] = $p;
             }
         }
 
         foreach($code as $cd) {
             // $pulsa[] = (object) ['pulsa' => substr($cd->code,1)];
-            $pulsa[] = substr($cd->code,1);
+            $pulsa[] = substr($cd->code,$c);
         }
 
         foreach($pulsa as $pul) {
