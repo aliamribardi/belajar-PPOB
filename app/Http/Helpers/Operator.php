@@ -4,7 +4,7 @@ use App\Models\Pulsa;
 
 if(! function_exists('telkomsel'))
 {
-    function telkomsel($paket, $op)
+    function operator($paket, $op)
     {
         // $pulsa = [
         //     (object) ['pulsa' => '5.000'],

@@ -20,7 +20,7 @@ class PulsaRepository extends BaseRepository
         $data = new PPOB;
         $a = $data->cekHarga();
         $b = json_decode($a);
-        $j = collect($b->message)->groupBy('provider')->all();
+        $j = collect($b->message)->where('provider_sub', 'REGULER')->groupBy('provider')->all();
 
         return $j;
     }
@@ -43,7 +43,7 @@ class PulsaRepository extends BaseRepository
         // foreach($p as $i) {
         //     $op = $i->operator_sub;
         // }
-        $pkt = telkomsel($p->all(), $op);
+        $pkt = operator($p->all(), $op);
             // dd($op);
 
         // dd($pkt);
