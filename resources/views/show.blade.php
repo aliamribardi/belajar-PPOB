@@ -12,9 +12,9 @@
             @foreach ($pulsas as $pulsa)
                 <div class="card m-2" style="width: 10rem;">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $pulsa->description }}</h5>
-                        <p class="card-text">{{ $pulsa->price+1000 }}</p>
-                        <a href="#" class="btn btn-primary">Beli</a>
+                        {{-- <h5 class="card-title">{{ $pulsa->description }}</h5> --}}
+                        <p class="card-text">{{ $pulsa->pulsa }}.000</p>
+                        <a href="#" class="btn btn-primary">Rp.{{ $pulsa->harga }}</a>
                     </div>
                 </div>
             @endforeach

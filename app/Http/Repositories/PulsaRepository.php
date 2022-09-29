@@ -35,6 +35,22 @@ class PulsaRepository extends BaseRepository
         // $p = '';
         // $j = collect($b->message);
         $p = collect($b->message)->where('provider', $pulsa)->where('provider_sub', 'REGULER')->all();
+
+        $pkt = telkomsel($p);
+
+
+        $arrHelp = array(
+            'TELKOMSEL' => 'S',
+            'AXIS' => 'AX',
+            'TRI' => 'T',
+            'XL' => 'X',
+            'SMARTFREN' => 'SM',
+        );
+
+        dd($arrHelp[$pulsa]);
+
+        // dd($pkt);
+    
         // foreach($b->message as $i)
         // {
         //     if( $i->provider == $pulsa && $i->provider_sub == 'REGULER'){
@@ -47,6 +63,6 @@ class PulsaRepository extends BaseRepository
         // }
         // dd($j);
 
-        return $p;
+        return $pkt;
     }
 }

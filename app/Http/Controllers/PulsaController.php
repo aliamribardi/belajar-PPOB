@@ -63,6 +63,7 @@ class PulsaController extends Controller
     {
         // dd($pulsa);
         $data = $this->repository->detailPulsa($pulsa);
+        // $data = Pulsa::all();
 
         return view('show', [
             'pulsas' => $data,
