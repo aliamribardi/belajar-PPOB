@@ -9,11 +9,17 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
+        {{-- <li class="nav-item">
+          <a class="nav-link active" style="pointer-events: none" aria-current="page" href="#">||</a>
+        </li>
+        <li>
+          <a class="nav-link active" aria-current="page" href="#">Saldo : {{ $dataUsers[0]->saldo }}</a>
+        </li> --}}
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Saldo :" style="pointer-events: none">
       </form>
+      <a class="btn btn-outline-primary" href="{{ Route('login') }}">Login</a>
     </div>
   </div>
 </nav>
