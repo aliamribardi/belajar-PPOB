@@ -10,5 +10,10 @@ class BaseRepository
     {
         $this->model = $model;
     }
+
+    public function store($attributes)
+    {
+        return $this->model->create($attributes);
+    }
     
 }

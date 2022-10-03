@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\RegisterRepository;
 use App\Http\Requests\StoreRegisterRequest;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,10 @@ class RegisterController extends Controller
 {
     protected $repository;
 
-    public function __construct($repository)
+    public function __construct(RegisterRepository $repository)
     {
-        
+        $this->repository = $repository;
     }
-
 
     /**
      * Display a listing of the resource.
@@ -44,7 +44,7 @@ class RegisterController extends Controller
      */
     public function store(StoreRegisterRequest $request)
     {
-        //
+        $data = $this->repository->storeRegister($request);
     }
 
     /**

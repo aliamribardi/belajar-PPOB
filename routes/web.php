@@ -24,3 +24,4 @@ Route::get('/', [PulsaController::class, 'index']);
 Route::get('/show/{pulsa}', [PulsaController::class, 'show'])->name('show');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::get('/register/store', [RegisterController::class, 'store'])->name('register.store');
